@@ -12,10 +12,17 @@
 		Cookie [] cookies = request.getCookies();
 		//모든 쿠키를 순회하면서 쿠키의 값을 출력
 		for(Cookie cookie : cookies){
-			out.println("<p>" + cookie.getName() +
+			out.println("<p>" + 
+				java.net.URLDecoder.decode(cookie.getName(), "utf-8") +
 				":" + cookie.getValue() + "</p>");
 		}
 	
 	%>
 </body>
 </html>
+
+
+
+
+
+

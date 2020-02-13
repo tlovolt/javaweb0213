@@ -7,7 +7,10 @@
 <title>쿠키 생성</title>
 <%
 	//쿠키 생성
-	Cookie cookie = new Cookie("language", "java");
+	Cookie cookie = new Cookie(
+			java.net.URLEncoder.encode("언어", "utf-8"), "자바");
+	//쿠키의 수명을 설정
+	cookie.setMaxAge(60);
 	//쿠키 저장
 	response.addCookie(cookie);
 %>
